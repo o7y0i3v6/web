@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	span{
+		  visibility: hidden;  
+		/* display: none; */
+	}
+	.ok{/* 格式正确隐藏 */
+		 visibility: hidden; 
+	}
+	.err{/* 格式错误显示 */
+		 visibility: visible; 
+	}
+</style>
+<script type="text/javascript">
+	function fn1(){
+		var reg = /^\w{6,10}$/;
+		s1.className = 
+			reg.test(i1.value)?"ok":"err";
+		//如果格式正确返回true错误返回false
+		return reg.test(i1.value);
+	}
+	function fn2(){
+		var reg = /^\w{6,10}$/;
+		s2.className = 
+			reg.test(i2.value)?"ok":"err";
+		//如果格式正确返回true错误返回false
+		return reg.test(i2.value);
+	}
+</script>
+</head>
+<body>
+<a href="../imgs/2.gif"
+	 onclick="return confirm('您确认离开吗?')">
+	 	超链接</a>
+<form action="http://www.tmooc.cn" 
+	onsubmit="return fn1()+fn2()==2">
+	用户名:<input type="text" id="i1" onblur="fn1()">
+	<span id="s1">格式错误</span><br>
+	密码:<input type="text" id="i2" onblur="fn2()">
+	<span id="s2">格式错误</span><br>
+	<input type="submit" value="注册">
+</form>
+</body>
+</html>
+
+
+

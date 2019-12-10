@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>adjoin_selector</title>
+<style type="text/css">
+header>h1 {
+	color: red;
+}
+
+article>div>span, article>div>p, footer>div>span {
+	color: blue;
+}
+
+form span {
+	background-color: yellow;
+}
+
+article>div>span, footer>div>span, footer p>span {
+	background-color: purple;
+}
+
+header>div,footer>div>div {
+	background-color: orange;
+}
+</style>
+</head>
+<body>
+	<!-- 空格是跨元素范围查找， > 是不跨元素范围查找 -->
+	<header>
+		<div>
+			<h1>Start Search(red)</h1>
+		</div>
+		<div>
+			<sapn>s6</sapn>
+		</div>
+	</header>
+
+	<article>
+		<div>
+			<span>enter your words(blue)</span>
+		</div>
+		<div>
+			<form action="https://cn.bing.com/search">
+				<input type="submit" value="Search"> <input type="text"
+					name="q">
+				<p>
+					<span>s5</span>
+				</p>
+			</form>
+		</div>
+		<div>
+			<p>div3</p>
+		</div>
+	</article>
+	<footer>
+		<div>
+			<span>s2</span>
+			<div>
+				<span>s4</span>
+			</div>
+
+		</div>
+		<div>
+			<p>
+				<span>s3</span>
+			</p>
+		</div>
+	</footer>
+</body>
+</html>

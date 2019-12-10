@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form demo</title>
+
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	border: 2px solid blue;
+	font-style: italic;
+	width: 35%;
+	height: 75%
+}
+
+tbody {
+	border: 1px solid orange;
+}
+
+td {
+	color: rgb(255, 90, 0);
+	padding: 25px;
+	font-size: large;
+}
+
+font {
+	color: purple;
+}
+
+caption.tc {
+	font-weight: 900;
+	font-size: xx-large;
+	font-style: oblique;
+	color: red;
+}
+</style>
+
+</head>
+<body>
+	<div>
+		<form>
+			<table border="1">
+				<caption class="tc">REG</caption>
+				
+				<tbody>
+					<tr>
+						<td>UserName:</td>
+						<td><input type="text" name="username"></td>
+					</tr>
+					<tr>
+						<td>PassWord:</td>
+						<td><input type="password" name="pssword1"></td>
+					<tr>
+						<td>Confirmation PassWord:</td>
+						<td><input type="password" name="password2"></td>
+					</tr>
+					<tr>
+						<td>nick name:</td>
+						<td><input type="text" name="nick"></td>
+					</tr>
+					<tr>
+						<td>gender:</td>
+						<td><input type="radio" name="gender" value="m" id="m">
+							<label for="m">man</label> <input type="radio" name="gender"
+							value="w" id="w"> <label for="w">woman</label></td>
+					</tr>
+					<tr>
+						<td>hobby:</td>
+						<td><input type="checkbox" name="hobby" value="1" id="1">
+							<label for="1">1</label> <input type="checkbox" name="hobby"
+							value="2" id="2"> <label for="2">2</label> <input
+							type="checkbox" name="hobby" value="3" id="3"> <label
+							for="1">3</label></td>
+					</tr>
+					<tr>
+						<td>birthday:</td>
+						<td><input type="date" name="bdate"></td>
+
+					</tr>
+					<tr>
+						<td>head sculpture:</td>
+						<td><input type="file" name="hfile"></td>
+					</tr>
+					<tr>
+						<td>type:</td>
+						<td><select name="t">
+								<option value="a">A</option>
+								<option value="z">Z</option>
+								<option value="x">X</option>
+								<option value="c" selected="selected">C</option>
+						</select></td>
+					</tr>
+					<tr>
+						<td>introduce</td>
+						<td><textarea rows="3" cols="20" placeholder="please enter"> 
+					</textarea></td>
+					</tr>
+					<tr>
+						<td>identifying code</td>
+						<td><input type="text" name="ic"> <img
+							src="../blue.jpg" width="155px" height="60px"></td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

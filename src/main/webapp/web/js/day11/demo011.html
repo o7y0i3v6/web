@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [["朝阳","大兴","海淀区"],
+		["秦皇岛","唐山","石家庄"],
+		["青岛","济南","烟台"]]; 
+	
+	function changefn(){
+		//清空s2内容
+		s2.innerHTML = "<option>请选择</option>";
+		var cities = arr[s1.value];
+		//遍历数组里的每一个城市名
+		//创建option元素 把城市名放进去
+		//把创建的option添加到s2里面  
+		for(var i=0;i<cities.length;i++){
+			/* s2.innerHTML += 
+				"<option>"+citys[i]+"</option>"; */
+				var opt = 
+					document.createElement("option");
+				opt.innerText = cities[i];
+				s2.appendChild(opt);
+		}
+	}
+</script>
+</head>
+<body>
+<select id="s1" onchange="changefn()">
+	<option>请选择</option>
+	<option value="0">北京</option>
+	<option value="1">河北</option>
+	<option value="2">山东</option>
+</select>
+<select id="s2">
+	<option>请选择</option>
+</select>
+</body>
+</html>
+
+
+

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>flower</title>
+<style type="text/css">
+body{
+background-color: rgb(246,246,246);
+margin:0;
+}
+/*相对定位还要保留原有位置
+ 要考虑原有位置偏移 所以用绝对定位
+ 这样图片会出现在第一个位置 */
+img{
+	position: absolute;
+}
+</style>
+
+</head>
+<body>
+<script type="text/javascript" src="jq_file/jquery-1.4.2.min.js">
+</script>
+<script type="text/javascript">
+//计时器
+	setInterval(function(){
+		var img0 = $("<img alt='loading...' src='flower1/1.png'>");
+		var img1 = $("<img alt='loading...' src='flower1/2.png'>");
+		var img2 = $("<img alt='loading...' src='flower1/3.png'>");
+	
+		//得到20到40的随机数 
+		var size0= parseInt(Math.random()*25+3);
+		var size1= parseInt(Math.random()*9+3);
+		var size2= parseInt(Math.random()*9+3);
+	
+	
+		/*得到随机left值
+		      屏幕的宽减去雪花的宽刚好使雪花距离左边缘的宽度的最大值出现时顶在
+		     屏幕右边缘上
+		*/
+		//显示距离
+		var w = document.body.clientWidth;	
+
+		var left0 = parseInt(Math.random()*(w-size0));
+		var left1 = parseInt(Math.random()*(w-size1));
+		var left2 = parseInt(Math.random()*(w-size2));
+
+	 
+		
+		img0.css({"width":size0+"px","left":left0+"px"});
+		img1.css({"width":size1+"px","left":left1+"px"});
+		img2.css({"width":size2+"px","left":left2+"px"});
+
+	
+ 		//拿到body添加图片
+		$("body").append(img0);
+		$("body").append(img1);
+		$("body").append(img2);
+
+		
+ 		//做动画 如果拿body的话body的内容多高 高度就多高，
+ 		//内容脱离文档流 body高度就是0
+ 		//通过body先拿到html，因为这时只有html是窗口的尺寸
+ 		//再通过方法拿到尺寸
+ 		var h = document.body.parentElement.clientHeight;
+ 		var top0 = h-size0;
+ 		var top1 = h-size1;
+ 		var top2 = h-size2;
+ 			//animate({"top":top0+"px"},size0*700)
+			//animate里面装着的分别是属性名 属性值(滑行的距离 )变动的滑行时间
+ 			img0.animate({"top":top0+"px"},size0*700)
+ 			.fadeOut(7000,function(){ 
+ 				img0.remove();
+ 			});
+ 			
+ 			img1.animate({"top":top0+"px"},size1*1000)
+ 			.fadeOut(7000,function(){ 
+ 				img1.remove();
+ 			});
+ 			
+ 			img2.animate({"top":top0+"px"},size2*1000)
+ 			.fadeOut(7000,function(){ 
+ 				img2.remove();
+ 			});
+ 	
+ 		
+	},100);
+
+</script>
+
+</body>
+</html>

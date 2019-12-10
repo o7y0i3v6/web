@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 从这里输入比较的值，用id的值点value可以在js中获取 -->
+<input type="text" id="i1">
+<!-- 点击触发js方法  -->
+<input type="button" value="猜一猜" onclick="myfn()">
+
+<div id="d1"></div>
+<script type="text/javascript">
+//生成随机数 页面生成后随机数是固定的 
+var x = parseInt(Math.random()*100);
+var count = 0;
+	function myfn(){
+		//点几次就加几个 
+		count++;
+		if(i1.value>x){
+			d1.innerText="大了!";
+		}else if(i1.value<x){
+			d1.innerText="小了！";
+		}else{
+			d1.innerText="恭喜你在猜了"+count+"次后猜对了！";
+		}
+	}
+
+</script>
+</body>
+</html>

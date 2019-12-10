@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div,img{
+		width: 200px;
+		height: 150px;
+	}
+	img{
+		display: none;
+	}
+</style>
+<script type="text/javascript">
+	/* 页面加载完成事件 */
+	onload = function(){
+		//取出第一张图片
+	   var img = 
+		document.getElementsByTagName("img")[0];
+		//让图片显示
+		img.style.display="inline-block";
+	}
+	var x = 0;
+	//开启定时器
+	setInterval(function(){
+		var index = ++x%3;
+		//console.log(index);
+		//得到所有图片
+		var arr = 
+			document.getElementsByTagName("img");
+		//得到数组就遍历
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.display = 
+				i==index?"inline-block":"none";
+		}
+	},1000);
+		
+	
+</script>
+</head>
+<body>
+<div>
+	<img src="../imgs/a.jpg">
+	<img src="../imgs/b.jpg">
+	<img src="../imgs/k.jpg">
+</div>
+</body>
+</html>
+
+
+

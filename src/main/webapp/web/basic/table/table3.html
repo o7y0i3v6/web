@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>spread table</title>
+<style type="text/css">
+table {
+	border-collapse: collapse;
+	font-style : italic;
+	width: 50%;
+
+}
+
+thead {
+	border:2px solid red;
+	color: orange;
+	
+}
+
+tbody {
+border:2px double blue;
+	text-align: center;
+	color: purple;
+	
+}
+tfoot {
+	border:2px solid red;
+	text-align: center;
+}
+tfoot.tf {
+	font-weight: bold;
+}
+th {
+padding: 30px;
+}
+td {
+padding: 30px;
+}
+td.tftd1 {
+font-weight:bold; 
+color: orange;
+}
+td.tftd2 {
+color: purple;
+}
+caption.tc {
+font-weight: 900;
+font-size: xx-large;
+font-style: oblique;
+color: 	red;
+}
+</style>
+</head>
+<body>
+	<table  border="1">
+	<caption class="tc">spread table</caption>
+		<thead >
+			<tr >
+				<th>Number</th>
+				<th>name</th>
+				<th>price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>keyboard</td>
+				<td>370</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>Apple</td>
+				<td>2000</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td class="tftd1">total price</td>
+				<td colspan="2" class="tftd2">2370</td>
+			</tr>
+		</tfoot>
+	</table>
+
+
+</body>
+</html>

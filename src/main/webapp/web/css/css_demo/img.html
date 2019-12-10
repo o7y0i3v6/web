@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>img demo</title>
+<style type="text/css">
+/*
+		垂直对齐方式 baseline 默认方式 基线对齐  
+		top 上对齐
+		middle 中间对齐
+		bottom 下对齐
+	*/
+#i1 {
+	vertical-align: top;
+	width: 300px;
+	height: 150px;
+}
+
+#i2 {
+	vertical-align: middle;
+	width: 300px;
+	height: 150px;
+}
+
+#i3 {
+	vertical-align: bottom;
+	width: 300px;
+	height: 150px;
+}
+
+div {
+margin: 10px 0;
+}
+
+article>div {
+display: inline-block;
+
+}
+#d0 {
+	width: 300px;
+	height: 150px;
+	border: 1px solid blue;
+	text-align: left;
+}
+
+
+
+
+
+</style>
+</head>
+<body>
+
+	<article>
+		<div id="d1">
+			<img id="i1" src="../imgs/d.jpg"> <input type="text">
+		</div>
+		<div>
+			<img id="i2" src="../imgs/d.jpg"> <input type="text">
+		</div>
+		<div>
+			<img id="i3" src="../imgs/d.jpg"> <input type="text">
+		</div>
+
+	</article>
+	<footer>
+		<div id="d0">div</div>
+	</footer>
+</body>
+</html>

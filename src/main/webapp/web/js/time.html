@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>time</title>
+<style type="text/css">
+
+h3{
+color: red;
+}
+
+</style>
+</head>
+<body>
+<h3 id="myh3"></h3>
+<script type="text/javascript">
+
+	var d = new Date();
+	myh3.innerText = d.toLocaleTimeString();
+	
+	setInterval(function(){
+		var d = new Date();
+		myh3.innerText = d.toLocaleTimeString();
+	},1000);
+	
+</script>
+</body>
+</html>

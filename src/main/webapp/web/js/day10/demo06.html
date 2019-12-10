@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<script type="text/javascript">
+		//只执行一次的定时器
+		setTimeout(function(){
+			alert("啦啦啦");
+		},3000);
+	
+	
+	
+		onload = function(){
+			//获取系统时间
+			var d = new Date();
+			myh3.innerText = d.toLocaleTimeString();
+		}
+		setInterval(function(){
+			var d = new Date();
+			myh3.innerText = d.toLocaleTimeString();
+		},1000);
+		
+		function startfn(){
+			//让按钮失效
+			b1.disabled = true;
+			//得到总秒数
+			var total = 
+				i1.value*3600+i2.value*60+i3.value*1;
+			//alert(total);
+			showTime(total)
+			var timer = setInterval(function(){
+				total--;
+				showTime(total);
+				if(total<=0){
+					//恢复按钮
+					b1.disabled = false;
+					//时间到停止
+					clearInterval(timer);
+					myh2.innerText = "时间到!";
+				}
+			},1000);
+		}
+		function showTime(total){
+			//转回时分秒  3661/3600
+			var h = parseInt(total/3600);
+		 	var m = parseInt(total%3600/60);
+		 	var s = total%60;
+		 	h = h<10?"0"+h:h;
+		 	m = m<10?"0"+m:m;
+		 	s = s<10?"0"+s:s;
+			myh2.innerText = h+":"+m+":"+s;
+		}
+	</script>
+</head>
+<body>
+<h3 id="myh3"></h3>	
+<input type="text" id="i1" placeholder="小时">
+<input type="text" id="i2" placeholder="分钟">
+<input type="text" id="i3" placeholder="秒">
+<input type="button" value="开始" 
+	onclick="startfn()" id="b1">
+<h2 id="myh2"></h2>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>obj</title>
+</head>
+<body>
+	<input type="button" value="按钮" onclick="myfn()">
+
+	<script type="text/javascript">
+		function myfn() {
+			var obj = event.target || event.srcElement;
+			//alert(obj);
+			obj.style.color = "red";
+		}
+
+		setTimeout(function() {
+			for (var i = 0; i < 3; i++) {
+				var img = document.createElement("img");
+				img.src = "./imgs2/fcgames.png";
+				document.body.appendChild(img);
+				img.onmouseover = function() {
+					//document.body.removeChild(img);
+					//这样写点哪个图片都只删最后一个
+					var obj = event.target || event.srcElement;
+					document.body.removeChild(obj);
+				}
+			}
+		}, 500);
+	</script>
+
+</body>
+</html>

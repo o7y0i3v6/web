@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.red{
+		color: red;
+	}
+	.green{
+		color: green;
+	}
+</style>
+<script type="text/javascript">
+	function myfn(){
+		var reg = /^\w{6,10}$/;
+		/* if(reg.test(i1.value)){
+			s1.className="green";
+		}else{
+			s1.className="red";
+		} */
+		s1.className=
+			reg.test(i1.value)?"green":"red";
+		
+		s2.className=
+			reg.test(i2.value)?"green":"red";
+	}
+	function fn1(){
+		var reg = /^\w{6,10}$/;
+		s1.className=
+			reg.test(i1.value)?"green":"red";
+	}
+	function fn2(){
+		var reg = /^\w{6,10}$/;
+		s2.className=
+			reg.test(i2.value)?"green":"red";
+	}
+</script>
+</head>
+<body>
+用户名:<input type="text" id="i1" onblur="fn1()"> 
+<span id="s1">6-10位数字字母下划线组成</span><br>
+密码:<input type="text" id="i2" onblur="fn2()">
+<span id="s2">6-10位数字字母下划线组成</span><br>
+<input type="button" value="校验" 
+	onclick="myfn()">
+
+</body>
+</html>
+
+
+
+

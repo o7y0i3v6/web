@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Use bing</title>
+
+<style type="text/css">
+font.slogan {
+	font-style: oblique;
+	font-weight: bolder;
+	font-size: x-large;
+	color: purple;
+}
+
+font.option {
+	font-style: inherit;
+	font-weight: bolder;
+	font-size: large;
+	color: fuchsia;
+}
+</style>
+
+
+</head>
+<body>
+	<form action="https://cn.bing.com/search">
+		
+			<p><font class="slogan">Select you want</font></p>
+		
+		<div>
+			<!-- for指向id -->
+			<label for="IBM"> <font class="option">IBM</font></label> 
+			<input type="radio" name="q" value="IBM" id="IBM"> 
+			
+			<label for="Microsoft"> 
+			<font class="option">Microsoft</font>
+			</label> 
+			<input type="radio" name="q" value="Microsoft" id="Microsoft">
+		</div>
+
+		<div>
+			<input type="submit" value="Search">
+		</div>
+	</form>
+
+	<form action="https://cn.bing.com/search">
+		<div>
+			<font class="slogan">Select you want</font>
+		</div>
+		<div>
+			<font class="option">1</font> 
+			<input type="checkbox" name="q" value="f"> 
+			<font class="option">2</font> 
+			<input type="checkbox" name="q" value="e"> 
+			<font class="option">3</font>
+			<input type="checkbox" name="q" value="w"> 
+			<font class="option">4</font> 
+			<input type="checkbox" name="q" value="c">
+			<font class="option">5</font> 
+			<input type="checkbox" name="q" value="t">
+		</div>
+		<div>
+			<font class="option">Date</font> <input type="date" name="birthday">
+			<font class="option">file</font> <input type="file" name="pic">
+		</div>
+
+		<div>
+			<input type="submit" value="Search">
+		</div>
+	</form>
+
+
+	<form action="https://cn.bing.com/search">
+		<div>
+			<font class="slogan">Use bing to Search</font> <input type="text"
+				name="q" placeholder="please enter keywords">
+		</div>
+		<div>
+			<input type="submit" value="Search">
+		</div>
+	</form>
+
+	<form action="https://cn.bing.com/search">
+		<div>
+			<font class="slogan">View resources related to GitHub</font> <input
+				type="hidden" name="q" value="GitHub" readonly="readonly">
+		</div>
+
+		<div>
+			<input type="submit" value="Start view resources">
+		</div>
+	</form>
+	<div>
+	
+	<form action="https://cn.bing.com/search">
+		<div>
+			<font class="slogan">please chose</font> 
+			<select name="q">
+				<option value="m" selected="selected">Microsoft</option>
+				<option value="t">thoughtsWork</option>
+				<option value="i">IBM</option>
+			</select>
+		</div>
+		
+		<div>
+			<input type="submit" value="Start view resources">
+		</div>
+	</form>
+</div>
+
+<div>
+<form action="https://cn.bing.com/search">
+<div>
+		<textarea name="q" rows="3" cols="20" placeholder="please enter">
+		</textarea>
+		</div>
+		<div>
+			<input type="submit" value="Start view resources">
+			<input type="reset" value="reset">
+			<input type="button" value="play click">
+		</div>
+</form>
+
+
+</div>
+
+</body>
+</html>

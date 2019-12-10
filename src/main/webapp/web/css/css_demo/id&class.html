@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>id&class</title>
+<style type="text/css">
+#d {
+	font-size: xx-large;
+	font-style: italic;
+	font-weight: bolder;
+	font-family: monospace;
+	color: orange;
+}
+
+.d2 {
+	font-size: xx-large;
+	font-style: oblique;
+	font-weight: bold;
+	color: orange;
+}
+
+#d3, .d4 {
+	font-size: x-large;
+	font-style: oblique;
+	color: navy;
+}
+
+input[type='text'] {
+	background-color: aqua;
+}
+
+input[type='password'] {
+	background-color: fuchsia;
+}
+
+input[type='button'] {
+	background-color: maroon;
+}
+</style>
+</head>
+<body>
+	<!-- 
+	font-style: oblique 小型现代体
+	
+	font-style: italic 斜体
+	font-family: monospace 加大 古典体
+#character > id="character"
+.character > class="character"
+6.03 140 44
+ -->
+
+	<header>
+		<p id="d">HEAD</p>
+		<p class="d2">head</p>
+		<p class="d2">head</p>
+	</header>
+	<article>
+		<p id="d3">username</p>
+		<input type="text">
+		<p class="d4">password</p>
+		<input type="password">
+		<p class="d4">load</p>
+		<input type="button">
+	</article>
+
+</body>
+
+
+
+</html>

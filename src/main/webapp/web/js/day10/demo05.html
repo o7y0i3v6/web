@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	div,img{
+		width: 200px;
+		height: 150px;
+		position: relative;
+	}
+	img{
+		position: absolute;
+	}
+	div{
+		overflow: hidden;
+	}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		var arr = 
+			document.getElementsByTagName("img");
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.left = i*200+"px";
+		}
+	}
+	//每隔2秒移动一次图片
+	var timer = setInterval(change,2000);
+	
+	//改变图片的方法
+	function change(){
+		/* 开启定时器移动图片 */
+		var moveTimer = setInterval(function(){
+			var arr = 
+				document.getElementsByTagName("img");
+			for(var i=0;i<arr.length;i++){
+				//取出原来的left值
+				 var oldLeft = 
+					 parseInt(arr[i].style.left);
+				 oldLeft-=4;
+				 //离开页面后把图片放到两张图片的后面
+				 if(oldLeft<=-200){
+					 oldLeft=400;
+					 //让定时器停止
+					 clearInterval(moveTimer);
+				 }
+				 //把值再赋值回去
+				 arr[i].style.left = oldLeft+"px";
+			}
+		},10);
+	}
+	
+	function stop(){
+		console.log("停止");
+		clearInterval(timer);
+	}
+	function start(){
+		//停止之前的定时器
+		stop();
+		console.log("开始");
+		timer = setInterval(change,2000);
+	}
+	//失去焦点事件
+	onblur = function(){
+		stop();
+	}
+	//获取焦点事件
+	onfocus = function(){
+		start();
+	}
+	
+</script>
+</head>
+<body>
+<div onmouseover="stop()" onmouseout="start()">
+	<img src="../imgs/a.jpg">
+	<img src="../imgs/b.jpg">
+	<img src="../imgs/k.jpg">
+</div>
+</body>
+</html>
+
+

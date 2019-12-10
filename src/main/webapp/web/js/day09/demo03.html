@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 	function Person(name,age){
+		//给对象添加属性  
+		this.name=name;
+		this.age=age;
+		//给对象添加方法 
+		this.run = function(){
+			alert(this.name+":"+this.age);
+		}
+	} */
+	//实例化对象
+	//var p = new Person("关羽",42);
+	//p.run();
+	
+	function Student(){}
+	var s = new Student();
+	//js中可以动态给对象添加属性和方法
+	s.name="刘德华";
+	s.age=28;
+	s.run = function(){
+		alert(this.name+":"+this.age);
+	}
+	//访问方法
+	//s.run();
+	/* 第二种实例化对象的方式 */
+	var p2 = {
+			/* 以键值对的形式添加属性和方法 */
+			"name":"刘备",
+			"age":43,
+			"run":function(){
+				alert(this.name+":"+this.age);
+			}
+	}
+	p2.run();
+	
+	
+	
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

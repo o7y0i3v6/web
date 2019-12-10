@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div {
+	width: 200px;
+	height: 200px;
+	background-color: red;
+	margin: auto;
+}
+</style>
+</head>
+<body>
+	<div onmouseover="overfn()" onmouseout="outfn()"
+	onmouseup="upfn()" onmousedown="downfn()"
+	onmousemove="movefn()"
+	></div>
+
+	<script type="text/javascript">
+	function movefn(){
+		console.log("鼠标移动");
+	}
+	
+	function upfn(){
+		console.log("鼠标抬起");
+	}
+	
+	function downfn(){
+		console.log("鼠标按下");
+		console.log("X:"+event.clientX+" Y:"+event.clientY);
+	}
+	function overfn(){
+		console.log("鼠标移入");
+	}
+	function outfn(){
+		console.log("鼠标移出");
+	}
+	
+</script>
+</body>
+</html>

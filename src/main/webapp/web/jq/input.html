@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript" src="jquery-1.4.2.js">
+		
+	</script>
+	<script type="text/javascript">
+		//onload = function(){}
+		$(function() {
+			//alert("jq引入完成");
+			$("#b1").click(function(){
+				alert($("#i1").val());
+			});
+		});
+	</script>
+
+	<input type="button" value="按钮" id="b1">
+	<input type="text" id="i1">
+
+</body>
+</html>

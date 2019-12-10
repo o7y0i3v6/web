@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	img{
+		width: 100px;
+	}
+</style>
+<script type="text/javascript">
+	var imgs = ["a.jpg","b.jpg","k.jpg"];
+	//012012012
+	//如果出现不断往返数值 一定要记得
+	//准备一个不断递增的数 对此数取余数
+	var x = 0;
+	setInterval(function(){
+		var i = x++%imgs.length;
+		//console.log(i);
+		var name = imgs[i];
+		d1.innerHTML+=
+			"<img src='../imgs/"+name+"'>";
+	},1000);
+</script>
+</head>
+<body>
+<div id="d1"></div>
+</body>
+</html>

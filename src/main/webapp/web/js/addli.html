@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="i1"> 
+		<input type="text" id="i2">
+	</div>
+	
+	<input type="button" value="添加" onclick="myfn()">
+
+	<ul id="myul"></ul>
+<script type="text/javascript">
+
+	function myfn(){
+		var arr = i1.value.split(i2.value);
+		for(var i=0;i<arr.length;i++){
+			myul.innerHTML+=
+			"<li>"+arr[i]+"</li>"
+		}
+	}	
+	
+</script>
+	
+	
+</body>
+</html>

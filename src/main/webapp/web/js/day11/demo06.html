@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function myfn(){
+		//获取事件源对象
+		var obj = 
+			event.target||event.srcElement;
+		//alert(obj);
+		obj.style.color="red";
+	}
+	
+	onload = function(){
+		b2.onclick = function(){
+			/* 动态绑定事件中的this代表事件源 */ 
+			//alert("xxx"+this);
+			this.style.color="blue";
+		}
+	}
+</script>
+</head>
+<body>
+<input type="button" value="按钮1"
+		 onclick="myfn()">
+<input type="button" value="按钮2" id="b2">
+
+</body>
+</html>
+
+
+

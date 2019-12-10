@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+/* 
+1. 在页面加载完成的时候通过c1获取所有的二层ul
+	并且遍历,让其隐藏
+2. 实现myfn方法 方法有参数li
+3. 通过li获取里面的ul 
+4. 通过三目 如果ul隐藏则显示否则隐藏
+5. 再次通过c1获取所有的二层ul 并且遍历,
+	判断出不是当前点击的ul 让其隐藏
+*/
+</script>
+</head>
+<body>
+<ul>
+	<li onclick="myfn(this)">工作好友
+		<ul class="c1">
+			<li>马云</li>
+			<li>马华腾</li>
+			<li>马大帅</li>
+		</ul>
+	</li>
+	<li onclick="myfn(this)">亲朋好友
+		<ul class="c1">
+			<li>习大大</li>
+			<li>老干妈</li>
+			<li>马大姐</li>
+		</ul>
+	</li>
+	<li onclick="myfn(this)">前女朋们
+		<ul class="c1">
+			<li>貂蝉</li>
+			<li>武则天</li>
+			<li>孙尚香</li>
+		</ul>
+	</li>
+</ul>
+</body>
+</html>
+
+

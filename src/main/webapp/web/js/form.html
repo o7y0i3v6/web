@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>form</title>
+<style type="text/css">
+p {
+	font-size: xx-large;
+	font-weight: bold;
+	font-style: oblique;
+	color: blue;
+	margin-bottom: 1px;
+}
+
+article>div {
+	width: 300px;
+	height: 200px;
+	border: 1px solid red;
+	margin: auto;
+}
+
+span {
+	visibility: hidden;
+}
+</style>
+</head>
+<body>
+	<header></header>
+
+	<article>
+		<div>
+			<form action="https://www.bing.com/"
+				onsubmit="return checkUsername()+checkPassword()==2">
+				<!-- onsubmit = "return checkUsername()+checkPassword()==2不短路的写法 
+			true和false就是1和0
+			-->
+
+				<p>用户名</p>
+				<input type="text" id="i1" onblur="checkUsername()"> <span
+					id="s1">账号格式错误</span>
+
+				<p>密码</p>
+				<input type="text" id="i2" onblur="checkPassword()"> <span
+					id="s2">密码格式错误</span> <input type="submit" value="O注册O">
+			</form>
+		</div>
+	</article>
+	<footer>
+		<a href="http://www.bing.com" onclick="return false;">false</a> 
+		<a href="http://www.bing.com" onclick="return confirm('您确认离开吗?')">
+			turn </a>
+
+
+	</footer>
+	<script type="text/javascript">
+		function checkUsername() {
+
+			var reg = /^\w{6,10}$/;
+			//test()方法返回布尔值
+			/* if(reg.test(i1.value)){
+				s1.style.visibility="hidden";
+			}else{
+				s1.style.visibility="visible";
+			} */
+			s1.style.visibility = reg.test(i1.value) ? "hidden" : "visible";
+			return reg.test(i1.value);
+		}
+		function checkPassword() {
+			var reg = /^\w{6,10}$/;
+			s2.style.visibility = reg.test(i2.value) ? "hidden" : "visible";
+
+			return reg.test(i2.value);
+		}
+	</script>
+
+</body>
+</html>

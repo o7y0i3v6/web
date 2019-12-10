@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+
+男<input type="radio" name="gender" value="m">
+女<input type="radio" name="gender" value="f">
+<div>div1</div>
+<div id="d2">div1</div>
+<div class="c1">div1</div>
+<span>span1</span>
+<span >span1</span>
+<span class="c1">span1</span>
+<h3 class="c1">h3</h3>
+<script type="text/javascript">
+setTimeout(function(){
+	var arr = 
+		document.getElementsByClassName("c1");
+	
+	for(var i=0;i<arr.length;i++){
+		arr[i].style.color="red";	
+	}
+	
+	
+	
+},3000);	
+//窗口点击事件
+onclick = function(){
+		//创建图片标签
+		var i = document.createElement("img");
+		
+		//设置图片路径
+		i.src="./imgs2/3.png";
+		
+		//把图片添加到body
+		document.body.appendChild(i);
+		
+	}
+
+</script>
+</body>
+</html>

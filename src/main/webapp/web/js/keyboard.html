@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<input type="text" onkeydown="downfn()" onkeyup="upfn()">
+
+<script type="text/javascript">
+	function downfn(){
+		console.log("按下:"+event.keyCode);
+	}
+	function upfn(){
+			console.log("抬起:"+String.fromCharCode(event.keyCode));
+	}
+</script>
+</body>
+</html>

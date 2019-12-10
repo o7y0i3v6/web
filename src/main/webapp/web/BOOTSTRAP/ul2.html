@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ul2</title>
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css"
+	href="./bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="./bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+</head>
+
+<body>
+<!-- 最外层<ul>表示整个下拉列表区域-->
+	<ul class="nav nav-tabs">
+	<!-- 最外层的表示列表区域中的一个列表 -->
+		<li role="presentation" class="dropdown">
+		<!-- 列表的一个标题 -->
+		<a class="dropdown-toggle" 
+			data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> 
+			大苹果 
+			<!--  该span表示倒三角 -->
+			<span class="caret"></span>
+		</a>
+		<!-- 标题下的一个选项 -->
+			<ul class="dropdown-menu">
+				<li>蓝苹果</li>
+				<li>红苹果</li>
+				<li>会飞的苹果</li>
+				<li>会跑的苹果</li>
+				<li>会走的苹果</li>
+			</ul>
+		</li>
+		<li role="presentation" class="dropdown">
+		<a class="dropdown-toggle" 
+			data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> 
+			蓝可乐 
+			<span class="caret"></span>
+		</a>
+			<ul class="dropdown-menu">
+				<li><a href="">蓝苹果</a></li>
+				<li>红苹果</li>
+				<li>会飞的苹果</li>
+				<li>会跑的苹果</li>
+				<li>会走的苹果</li>
+			</ul>
+		</li>
+	</ul>
+</body>
+
+<script type="text/javascript" src="./bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/respond.min.js"></script>
+<script type="text/javascript">
+$("li").click(function(){
+	//首先选取所有li
+	//然后点击事件中放一个方法
+	//this就是我点击的这个 然后设置属性
+	$(this).attr("class","active"); 
+	//让点中的元素生效时让兄弟元素的相应属性再次为空
+	$(this).siblings().attr("class","");
+});
+</script>
+</html>

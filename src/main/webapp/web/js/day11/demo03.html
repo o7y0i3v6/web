@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body{
+		background-image: url("../zombimgs/bg1.jpg");
+		margin: 0;
+		overflow: hidden;
+	}
+	img{
+		position: absolute;
+		width: 60px;
+		height: 60px;
+	}
+	#success_h3{
+		float:left;
+		color: yellow;
+		background-color: black;
+	}
+	#fail_h3{
+		float:right;
+		color: red;
+		background-color: green;
+	}
+</style>
+<script type="text/javascript">
+	var successCount=0;
+	var failCount=0;
+	
+	onload = function(){
+		changeBG();
+	}
+	/* 窗口尺寸改变事件 */
+	onresize = function(){
+		changeBG();
+	}
+	function changeBG(){
+		var w = document.body.clientWidth;
+		var h = 
+			document.body.parentElement.clientHeight;
+		//alert(w+":"+h);
+		//修改body的背景图片尺寸
+		document.body.style.backgroundSize = 
+								w+"px "+h+"px";
+	}
+	//开启定时器添加僵尸图片
+	var timer = setInterval(function(){
+		var img = document.createElement("img");
+		//控制僵尸图片
+		var type = parseInt(successCount/20);
+		if(type>3){
+			type=3;
+		}
+		img.src = "../zombimgs/zomb"+type+".png";
+		//得到一个top的随机值
+		var w = document.body.clientWidth;
+		var h = 
+			document.body.parentElement.clientHeight;
+		var top = parseInt(Math.random()*(h-60));
+		//设置僵尸图片距上边缘的距离
+		img.style.top = top+"px";
+		//设置僵尸图片距左侧的距离
+		img.style.left = w+"px";
+		document.body.appendChild(img);
+		
+		//给僵尸图片添加鼠标移入事件
+		img.onmouseover = function(){
+			//删除僵尸图片
+			document.body.removeChild(img);
+			//统计成功数量
+			successCount++;
+			success_h3.innerText = 
+					"成功数量:"+successCount;
+		};
+	},100);
+	 
+	
+	
+	
+	//开启定时器移动僵尸
+	var moveTimer = setInterval(function(){
+		//得到所有的僵尸图片
+		var arr = 
+			document.getElementsByTagName("img");
+		for(var i=0;i<arr.length;i++){
+			var oldLeft = 
+				parseInt(arr[i].style.left);
+			//每干掉20个僵尸 移动速度+1 
+			var speed = parseInt(successCount/20);
+			oldLeft-=(2+speed);
+			
+			arr[i].style.left=oldLeft+"px";
+			//判断僵尸撞墙则删除僵尸
+			if(oldLeft<=0){
+				//删除僵尸
+				document.body.removeChild(arr[i]);
+				//统计失败数量
+				failCount++;
+				fail_h3.innerText = 
+					"失败数量:"+failCount;
+				//失败判断
+				if(failCount>=30){
+					//alert("Game Over!");
+					//停止两个定时器
+					clearInterval(timer);
+					clearInterval(moveTimer);
+					document.body.innerHTML=
+						"<h1>游戏结束,共歼灭"
+						+successCount+"个僵尸</h1>"
+				}
+			}
+		}
+	},10);
+</script>
+</head>
+<body>
+<h3 id="success_h3">成功数量:0</h3>
+<h3 id="fail_h3">失败数量:0</h3>
+</body>
+</html>
+
+

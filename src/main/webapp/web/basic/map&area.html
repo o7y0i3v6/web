@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>map</title>
+</head>
+<body>
+	<!-- #代表从当前页面查找 -->
+	<div>
+		<img src="blue.jpg" usemap="#map2">
+	</div>
+
+	<!-- 可以用来查坐标 -->
+	<div>
+		<form>
+			<input type="image" src="blue.jpg" title="form">
+		</form>
+	</div>
+	
+	<!-- <map>是分区响应图的关键元素， <area>可以有多个，各自代表图像上可被点击的
+	一块区域-->
+	<a target="_blank" href="input.html"> <img src="blue.jpg">
+	</a>
+
+
+	<map name="map1">
+		<!-- Area元素属性分为两类， -->
+		<!-- 第一类点击导航到指定URL
+		有Href 该被点击时浏览器应该加载的URL
+		  Alt 定义图片的备用内容-->
+		<!-- 第二类：shape属性和coords属性，共同起作用，标明用户可以点击的各个图像区域 -->
+		<!-- coords="16,50,138,146" 分别是左边距的x坐标，上边距的y坐标，右边距的x坐标
+		，下边距的y坐标，其实就是左上角点的坐标和右下角的坐标 -->
+		<area href="input2.html" shape="rect" coords="16,50,138,146">
+		<area>
+		<area>
+		<area>
+		<area>
+		<area>
+	</map>
+
+	<map name="map2">
+		<area href="input2.html" shape="circle" coords="80,93,60">
+	</map>
+</body>
+</html>

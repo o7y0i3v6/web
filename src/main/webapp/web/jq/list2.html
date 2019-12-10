@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>table2</title>
+<style type="text/css">
+table {
+	border: 1px solid blue;
+	border-collapse: collapse;
+	margin: auto;
+	text-align: center;
+}
+
+th,td {
+	border: 1px solid blue;
+	padding: 21px;
+}
+
+</style>
+</head>
+<body>
+	<table>
+		<caption>特价商品</caption>
+		<tr>
+			<th>商品名称</th>
+			<th>商品单价</th>
+			<th>商品库存</th>
+			<th>商品库存</th>
+		</tr>
+		<tr>
+			<td>苹果手机</td>
+			<td>3000</td>
+			<td>500</td>
+			<td>
+			<input type="button" value="添加到购物车">
+			</td>
+		</tr>
+		<tr>
+			<td>篮球</td>
+			<td>3000</td>
+			<td>500</td>
+			<td>
+			<input type="button" value="添加到购物车">
+			</td>	
+		</tr>
+		<tr>
+			<td>裤子</td>
+			<td>300</td>
+			<td>10</td>	
+			<td>
+			<input type="button" value="添加到购物车">
+			</td>
+		</tr>
+	</table>
+	<table border=1>
+		<caption>购物车</caption>
+		<tr>
+			<th>商品名称</th>
+			<th>商品单价</th>
+			<th>商品数量</th>
+			<th>商品金额</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>总价:</td>
+			<td colspan="4">0元</td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript" src="jq_file/jquery-1.4.2.min.js">	
+	</script>
+	<script type="text/javascript">
+	$("input").click(function(){
+		
+		//$(this).parent().siblings()[0]这样取取出来的是JS对象
+		var name =  $(this).parent().siblings().eq(0).text();
+		
+		var price = $(this).parent().siblings().eq(1).text();
+	
+		
+		var tr = $("<tr></tr>");
+		var nametd = $("<td></td>");
+		var pricetd = $("<td></td>");
+		var numtd= $(
+				"<td>" 
+				+ "<input type='button' value='+' onclick='numfn(1)'>"
+				+"<span>1</span>"
+				+ "<input type='button' value='-' onclick='numfn(-1)'>"
+				+"</td>");
+		var moneytd = $("<td></td>");
+		var deltd = $(
+				"<td>" 
+				+ "<input type='button' value='删除'> "
+				+ "</td>");
+		
+		deltd.children().click(function(){
+			$(this).parent().parent().remove();
+			calfn();
+		});
+		
+		nametd.text(name);
+		pricetd.text(price);
+		moneytd.text(price);
+		
+		tr.append(nametd);
+		tr.append(pricetd);
+		tr.append(numtd);
+		tr.append(moneytd);
+		tr.append(deltd);
+		/* $("table:last").append(tr); */
+		$("tr:last").before(tr);
+		calfn();
+	});
+	
+	function numfn(x){
+		//此方法非动态绑定方法 this不是按钮
+		//通过获取事件源的方式得到按钮
+		var obj =
+			event.target||evet.srcElement;
+		//通过按钮得到兄弟span，再得到内容
+		$(obj).siblings("span").text(); 
+		/*
+			$(obj).siblings("span").text()
+			
+		*/
+		var num =
+			parseInt($(obj).siblings("span").text());
+		/*	取出数来运算  运算完后放回去
+		  	用num加等传过来的x，这个x就代表传过来的1或者-1
+		 	当时设定的是减是-1加是正1
+			传过来的数和原来的数进行运算，运算完后放回去\
+			.text()空参数是拿到值 写上参数是传进去
+		*/
+		num+=x;
+		if(num<1){
+			num=1;
+		}
+		//显示代码
+		$(obj).siblings("span").text(num);
+		//得到单价 上级 高邻 
+		var price = $(obj).parent().prev().text();
+		//把单价和数量相乘结果给到金额
+		$(obj).parent().next().text(price*num);
+		//计算总价
+		calfn();
+	}
+	//计算总价 
+	function calfn(){
+		var total = 0;
+		$("table:last tr").each(function(){
+			//得到tr里面四个孩子 就是商品金额 
+		var money = parseInt($(this).children().eq(3).text()); 
+			
+			 if(!isNaN(money)){
+				 total+=money;
+			 }
+		});
+		$("td:last").text(total+"元");
+	}
+	
+	</script>
+</body>
+</html>

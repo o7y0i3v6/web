@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+div{
+	width: 1200px;
+	height: 1200px;
+	background-color: red;
+}
+</style>
+<script type="text/javascript">
+	function downfn(){
+		//event事件对象 保存着和事件相关的信息
+		//鼠标事件中可以得到鼠标的坐标
+		console.log("鼠标按下:"
+				+event.clientX+":"+event.clientY);
+		//添加图片
+		var img = document.createElement("img");
+		img.src = "../imgs/2.gif";
+		document.body.appendChild(img);
+		img.style.position = "absolute";
+		img.style.left = event.clientX+"px";
+		img.style.top = event.clientY+"px";
+		
+		
+	}
+	function upfn(){
+		console.log("鼠标抬起");
+	}
+	function movefn(){
+		console.log("鼠标移动"); 
+	}
+	function keydownfn(){
+		//通过event事件对象得到键盘编码
+		
+		console.log("键盘按下:"+event.keyCode);
+	}
+	function keyupfn(){
+		console.log("键盘抬起:"
+				+String.fromCharCode(event.keyCode));
+	}
+</script>
+</head>
+<body>
+<input type="text" onkeydown="keydownfn()"
+	onkeyup="keyupfn()">
+	
+	
+<div onmousedown="downfn()" 
+	onmouseup="upfn()"
+	onmousemove="movefn()"></div>
+</body>
+</html>
+
+
+
+
+
+
+

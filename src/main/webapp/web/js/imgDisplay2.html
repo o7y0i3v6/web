@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IMG</title>
+<style type="text/css">
+div{
+height:500px;
+width: 100%;
+margin: auto;
+}
+img{
+	width: 100%;
+	height:500px;
+	display:inline-block;
+	visibility: 
+}
+</style>
+</head>
+<body>
+	<header></header>
+	<article>
+		<div>
+			<img src="./imgs2/bg-na1.jpg"> 
+			<img src="./imgs2/bg-na2.jpg">
+			<img src="./imgs2/bg-na3.jpg">
+		</div>
+	</article>
+	<footer></footer>
+
+<script type="text/javascript">
+onload = function(){
+	var arr = 
+		 document.getElementsByTagName("img");  
+	
+	for(var i=0;i<arr.length;i++){
+		if(i!=0){
+		arr[i].style.display="none";
+		}
+	}	 
+}
+ 
+ /*  var x = 0;
+ setInterval(function(){
+	 x++;
+	 var index = x%3;
+	 console.log(index); 
+	 var arr = 
+		 document.getElementsByTagName("img");  
+	 for(var i=0;i<arr.length;i++){
+		 arr[i].style.display=
+			 i==index?"inline-block":"none"; 
+	 }  
+ },1000); */ 
+ 
+</script>
+</body>
+</html>

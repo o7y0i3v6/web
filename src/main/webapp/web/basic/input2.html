@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>input2</title>
+<style type="text/css">
+input{
+display: block;
+}
+p{
+margin-bottom: 0;
+}
+</style>
+</head>
+<body>
+<!-- enctype="multipart/form-data" 不对字符编码。
+在使用包含文件上传控件的表单时，必须使用该值。 -->
+	<form enctype="multipart/form-data">
+		<!-- 格式验证-->
+		<p>email</p>
+		<input type="email">
+		<p>url</p> 
+		<input type="url">
+		<p>tel</p>
+		<input type="tel">
+		<p>color</p> 
+		<input type="color">
+		<p>date</p> 
+		<input type="date">
+		<!-- 当type="hidden"时，提交表单时依然会把value值传过去
+			hidden属性值在浏览器中没有任何效果，不会显示该元素，但是用户提交表单时会
+			发送出去	-->
+		<input type="hidden" value="......."> 
+		<p>search</p>
+		<input type="search">
+		<!-- 用搜索的文本框都用search -->
+		<p>image</p>
+	    <input type="image" src="blue.jpg" width="40px">
+		<!-- 当使用input元素上传文件提交表单时，要设置如下内容
+			属性Multiple 一次允许上传多个文件
+			属性Required 必须上传一个文件
+		-->
+	</form>
+</body>
+</html>

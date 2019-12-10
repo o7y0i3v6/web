@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<ul>
+<!-- this代表被点击的元素  -->
+<li onclick="myfn(this)">num
+<ul class="c1">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+</ul>
+</li>
+
+<li onclick="myfn(this)">char
+<ul class="c1">
+<li>q</li>
+<li>d</li>
+<li>f</li>
+<li>g</li>
+<li>s</li>
+</ul>
+</li>
+<!-- 点击本元素触发相应事件 -->
+<li onclick="myfn(this)">.....
+<ul class="c1">
+<li>....</li>
+<li>....</li>
+<li>.....</li>
+<li>.....</li>
+</ul>
+</li>
+</ul>
+
+
+<script type="text/javascript">
+	var arr = document.getElementsByClassName("c1");
+	
+	//脱离文档流隐藏 
+	for(var i=0;i<arr.length;i++){
+		arr[i].style.display="none";
+	}
+	
+	
+	function myfn(a){
+		//如果用document获取的是整个页面的
+		//var ul = document.getElementsByTagName("ul")
+		//如果用元素，就是从元素里面去找
+		var ul = a.getElementsByTagName("ul")[0];
+		
+		ul.style.display = ul.style.display=="none"?"block":"none"; 
+		
+		var arr = document.getElementsByClassName("c1");
+		
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]!=ul){
+				arr[i].style.display="none";
+			}
+		}	
+	}
+	
+</script>
+</body>
+</html>

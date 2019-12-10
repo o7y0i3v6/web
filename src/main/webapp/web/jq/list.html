@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>订单练习</title>
+</head>
+<body>
+	<h3>订单练习</h3>
+	<div>
+		<input type="checkbox" id="c1" value="10"> <label for="c1">U3000</label>
+	</div>
+	<div>
+		<input type="checkbox" id="c2" value="6000"> <label for="c2">ThinkPadz21</label>
+	</div>
+	<div>
+		<input type="checkbox" id="c5" value="5999"> <label for="c5">ThinkPadx30</label>
+	</div>
+	<div>
+		<input type="checkbox" id="c3" value="3999"> <label for="c3">Air2000</label>
+	</div>
+	<div>
+		<input type="checkbox" id="c4" value="6999"> <label for="c4">SonyC10</label>
+	</div>
+
+	<div id="6">
+		<input type="checkbox" id="c6"> <label for="c6">全选</label>
+	</div>
+	<p>总价:0元</p>
+	<script type="text/javascript" src="jquery-1.4.2.js"></script>
+	
+	<script type="text/javascript">
+	
+		$("input").click(function(){
+			if(this.id=="c6"){
+				//$(this).siblings("input")
+				 $(this).parent()
+				.siblings("div")
+				.children("input")
+				.attr("checked",this.checked); 
+				//$("input:not(#c6)").attr("checked",this.checked);
+			}
+			
+			var total=0;
+			$("input:not(#c6)").each(function(){
+				//这里this是当前遍历到的
+				if(this.checked){
+					total+=parseInt(this.value);
+				}
+			});	
+			$("p").text("总价:"+total+"元");
+		});
+	
+		
+	</script>
+</body>
+</html>

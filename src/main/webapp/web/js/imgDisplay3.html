@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+body {
+	background-image: url("./imgs2/cywl.jpg");
+}
+</style>
+
+</head>
+<body>
+
+
+
+	<script type="text/javascript">
+		onload = function() {
+			var h = document.body.parentElement.clientHeight;
+			var w = document.body.parentElement.clientWidth;
+
+			document.body.style.backgroundSize = w+"px "+h+"px";
+		}
+		
+		onresize = function() {
+			var h = document.body.parentElement.clientHeight;
+			var w = document.body.parentElement.clientWidth;
+
+			document.body.style.backgroundSize = w +"px "+h+"px";
+
+		}
+	</script>
+</body>
+</html>

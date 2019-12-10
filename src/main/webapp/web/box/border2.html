@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>border2</title>
+<style type="text/css">
+/* 内边距会撑大 */
+/*  改变无标签内容位置可以用内边距，但内容应当有标签   */
+div {
+	width: 500px;
+	height: 200px;
+	border: 1px solid red;
+	padding-top: 90px;
+	padding-left: 90px;
+	border-radius: 100px;
+}
+
+span {
+	border:1px solid blue;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+</style>
+</head>
+<body>
+	<header></header>
+	<article>
+	
+		<div>hello</div>
+		<span>span</span> <span>span</span>
+		<div>hello</div>
+		
+	</article>
+	<footer></footer>
+</body>
+</html>

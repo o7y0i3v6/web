@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	setTimeout(function(){
+		var arr = 
+			document.getElementsByClassName("c1");
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.color = "red";
+		}
+	},3000);
+	onclick = function(){
+		var d = document.createElement("div");
+		d.innerText = "哥哥";
+		d.style.color = "red";
+		document.body.insertBefore(d,d2);
+	}
+</script>
+</head>
+<body>
+性别:<input type="radio" name="gender"
+ value="nan">男
+ <input type="radio" name="gender"
+ value="nv">女
+ <div>div1</div>
+ <div id="d2">div2</div>
+ <div class="c1">div3</div>
+ <span>s1</span>
+ <span>s2</span>
+ <span class="c1">s3</span>
+ <h3 class="c1">h3</h3>
+ <h4>h4</h4>
+</body>
+</html>
+
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>event</title>
+<style type="text/css">
+
+div,p,input{
+border: 1px solid red;
+}
+</style>
+</head>
+<body>
+<div onclick="alert('div')">
+	<p onclick="alert('P')">
+		<input type="button" value="按钮" onclick="alert('按钮')">
+	</p>
+</div>
+<script type="text/javascript">
+	function myfn(){
+		//通过事件源区分点击元素 
+		var obj = event.target||event.srcElement;
+		if(obj.nodeName=="INPUT"){
+			alert("input");
+		}else if(obj.nodeName="P"){
+			alert("p");
+		}else{
+			alert("div");
+		}
+	}
+</script>
+
+
+</body>
+</html>

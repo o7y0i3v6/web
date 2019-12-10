@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>ul1</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="./bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="./bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
+</head>
+<body>
+<ul class="nav nav-pills">
+<!-- 各个标签谁的class属性是active谁是高亮显示，
+可以通过JQuery动态的改变属性值 -->
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation" ><a href="#">Profile</a></li>
+  <li role="presentation" ><a href="#">Messages</a></li>
+</ul>
+</body>
+<script type="text/javascript" src="./bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="./bootstrap3/js/respond.min.js"></script>
+<script type="text/javascript">
+$("li").click(function(){
+	//首先选取所有li
+	//然后点击事件中放一个方法
+	//this就是我点击的这个 然后设置属性
+	$(this).attr("class","active"); 
+	//让点中的元素生效时让兄弟元素的相应属性再次为空
+	$(this).siblings().attr("class","");
+});
+</script>
+</html>
