@@ -1,13 +1,13 @@
 function test(){
-	alert("我是test0");
+	alert("test()");
  }
 
 var blue={};
 blue.test=function(){
-	alert("show blue.test");
+	alert("blue.test()");
 }
 
 var orange={};
 orange.test=function(){
-	alert("show orange.test");
+	alert("orange.test()");
 }

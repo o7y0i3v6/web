@@ -13,19 +13,16 @@
 </head>
 
 <body>
-<!-- 最外层<ul>表示整个下拉列表区域-->
+	<!-- 最外层<ul>表示整个下拉列表区域-->
 	<ul class="nav nav-tabs">
-	<!-- 最外层的表示列表区域中的一个列表 -->
+		<!-- 最外层的表示列表区域中的一个列表 -->
 		<li role="presentation" class="dropdown">
-		<!-- 列表的一个标题 -->
-		<a class="dropdown-toggle" 
-			data-toggle="dropdown" href="#" role="button"
-			aria-haspopup="true" aria-expanded="false"> 
-			大苹果 
-			<!--  该span表示倒三角 -->
-			<span class="caret"></span>
-		</a>
-		<!-- 标题下的一个选项 -->
+			<!-- 列表的一个标题 --> 
+			<a class="dropdown-toggle" data-toggle="dropdown"
+			href="#" role="button" aria-haspopup="true" aria-expanded="false">
+				大苹果 <!--  该span表示倒三角 --> <span class="caret"></span>
+			</a> 
+		<!-- 该列表的选项，标题下的下一个选项 -->
 			<ul class="dropdown-menu">
 				<li>蓝苹果</li>
 				<li>红苹果</li>
@@ -34,13 +31,15 @@
 				<li>会走的苹果</li>
 			</ul>
 		</li>
+		<!-- 最外层的表示列表区域中的一个列表 -->
 		<li role="presentation" class="dropdown">
-		<a class="dropdown-toggle" 
-			data-toggle="dropdown" href="#" role="button"
-			aria-haspopup="true" aria-expanded="false"> 
-			蓝可乐 
-			<span class="caret"></span>
+		<!-- 列表的一个标题 -->
+		<a
+			class="dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+			aria-haspopup="true" aria-expanded="false"> 蓝可乐 <span
+				class="caret"></span>
 		</a>
+			<!-- 该列表的选项，标题下的下一个选项 -->
 			<ul class="dropdown-menu">
 				<li><a href="">蓝苹果</a></li>
 				<li>红苹果</li>
@@ -56,11 +55,12 @@
 <script type="text/javascript" src="./bootstrap3/js/bootstrap.js"></script>
 <script type="text/javascript" src="./bootstrap3/js/holder.js"></script>
 <script type="text/javascript" src="./bootstrap3/js/html5shiv.min.js"></script>
-<script type="text/javascript" src="./bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript"
+	src="./bootstrap3/js/css3-mediaqueries.js"></script>
 <script type="text/javascript" src="./bootstrap3/js/respond.min.js"></script>
 <script type="text/javascript">
 $("li").click(function(){
-	//首先选取所有li
+	//首先选取所有li，使其可以被设置点击事件。 
 	//然后点击事件中放一个方法
 	//this就是我点击的这个 然后设置属性
 	$(this).attr("class","active"); 

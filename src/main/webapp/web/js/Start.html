@@ -3,18 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Start</title>
+<!-- html的js和外联的js是在同一个代码区域内，存在变量名被覆盖风险 -->
 <script src="start.js"  type="text/javascript" charset="utf-8"></script>
-
 <script type="text/javascript">
-function test (){
-	alert("我是test1");
+function test(){
+	alert("function test()");
  }
 </script>
 
 </head>
 <body>
+<!--点击事件.click()-->
 <input type="button" value="test0" onclick="test()">
 <input type="button" value="test1" onclick="blue.test()">
 <input type="button" value="test2" onclick="orange.test()">
+<ol>
+<li>js的全局代码区只有一个，如果有外联，浏览器是自上而下合成一个文件来看的。</li>
+<li></li> 
+<li></li>
+</ol>
 </body>
 </html>

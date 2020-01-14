@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>AJAX DEMO</title>
+</head>
+<body>
+<script type="text/javascript">
+window.onload = function f(){
+	var myDate = new Date();
+	document.getElementById("currentTime").innerText = myDate.getTime();
+}
+</script>
+<div>
+<header>
+<h1>Use Ajax</h1>
+</header>
+<article>
+<p>请输入要加载的地址 <span id="currentTime"></span></p>
+<input type="text" id="url" value="www.bing.com">
+<input type="button" value="提交" onclick="">
+</article>
+<footer>
+<h3>
+加载页面的位置：
+</h3>
+<iframe style="width: 75%;height: 500px" id="iframePosition">
+
+</iframe>
+</footer>
+</div>
+</body>
+</html>

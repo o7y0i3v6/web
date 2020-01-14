@@ -2,17 +2,26 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Bootstrap Template</title>
-<!-- 自适用  width=device-width是等于设备的宽度-->
-<!--  initial-scale=1 不缩放-->
+<title>font in tag</title>
+<style type="text/css">
+div,span{
+	border: 1px solid black;
+}
+</style>
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<!-- 指定为外部样式表 -->
 <link rel="stylesheet" type="text/css" href="./bootstrap3/css/bootstrap.css">
 <link rel="stylesheet" type="text/css" href="./bootstrap3/font-awesome-4.7.0/css/font-awesome.css"/>
 </head>
 <body>
-  Bootstrap 模版
+<!-- class="text-center"是相对元素内部空间的文本居中 -->
+<!-- 宽度默认占整个body宽度，所以文字也在body中 -->
+ <div class="text-center">Bootstrap</div>
+ <!-- 宽度过小，所以看不出效果 -->
+ <span class="text-center">span1</span>
+ <!-- 内部是用float原理实现的 -->
+  <span class="pull-right">span2</span>
+  <span class="pull-right">span3</span>
 </body>
 <script type="text/javascript" src="./bootstrap3/jquery.min.js"></script>
 <script type="text/javascript" src="./bootstrap3/js/bootstrap.js"></script>
