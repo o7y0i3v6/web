@@ -5,13 +5,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="imgs/h.jpg" usemap="#mymap">
-<map name="mymap">
-	<area shape="circle" coords="380,350,49"
-	 href="http://www.tmooc.cn">
-	 <area shape="circle" coords="500,440,46"
-	 href="http://doc.tedu.cn">
-	
+	<!--  用标签中的 mymap 属性指定使用哪个map  -->
+	<img src="imgs/h.jpg" usemap="#mymap">
+	<!-- 创建一个map -->
+	<map name="mymap">
+	<!-- corrds属性 前两个值确定一个点，是位置，第三个值确定半径 -->
+		<area shape="circle" coords="380,350,49" href="http://www.tmooc.cn">
+		<area shape="circle" coords="500,440,46" href="http://doc.tedu.cn">
 	</map>
 </body>
 </html>
