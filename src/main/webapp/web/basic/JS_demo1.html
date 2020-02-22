@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	var arr = [["秦皇岛","唐山","石家庄"],
+							["大同","太原","吕梁"],
+							["洛阳","郑州","平顶山"]];
+	function myfn(){
+		//清空 
+			s2.innerHTML="<option>请选择</option>";
+		//alert(s1.value); 
+		//通过得到的下标去数组中取到对应的城市数组,二维数组每次取到多个元素。
+		var citys = arr[s1.value];
+		//遍历城市数组
+		for(var i=0;i<citys.length;i++){
+			//遍历的每一个城市名称都对应的创建一个option
+			var opt = document.createElement("option");
+			opt.innerText = citys[i];
+			//把option添加到s2里面 ！
+			s2.appendChild(opt);
+		}
+	}
+</script>
+</head>
+<body>
+<select onchange="myfn()" id="s1">
+	<option>请选择</option>
+	<option value="0">河北</option>
+	<option value="1">山西</option>
+	<option value="2">河南</option>
+</select>
+<select id="s2">
+	<option>请选择</option>
+</select>
+</body>
+</html>
+
